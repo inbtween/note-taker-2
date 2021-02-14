@@ -2,8 +2,8 @@
 // We are linking our routes to a series of "data" sources.
 // These data sources hold arrays of information on note taker, the title and note area etc.
 
-const titleData = require("../public/db/db.json");
-const noteData = require("../public/db/db.json");
+const titleData = require("../db/db.json");
+const noteData = require("../db/db.json");
 
 // ROUTING
 
