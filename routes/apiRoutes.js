@@ -11,9 +11,9 @@ module.exports = (app) => {
   // API GET Requests
   // Below code handles when users "visit" a page.
 
-  app.get("/api/title", (req, res) => res.json(titleData));
+  app.get("/api/title", (req, res) => res.json(titleData.title));
 
-  app.get("/api/notes", (req, res) => res.json(noteData));
+  app.get("/api/notes", (req, res) => res.json(noteData.text));
 
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
@@ -23,7 +23,7 @@ module.exports = (app) => {
     // title the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" make a title
     // req.body is available since we're using the body parsing middleware
-    if (titleData.length < 20) {
+    if (titleData.length < 200) {
       titleData.push(req.body);
       res.json(true);
     } else {
