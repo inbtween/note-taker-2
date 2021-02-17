@@ -16,27 +16,16 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // ROUTES
-
-// ROUTES
 app.get("/", (req, res) => {
-  // res.sendFile(path.join(__dirname, "index.html"));
-  // res.send("The server is live");
-  // res.sendFile(path.join(__dirname, "/public/index.html"));
   res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 app.get("/notes", (req, res) => {
-  // res.sendFile(path.join(__dirname, "index.html"));
-  // res.send("The server is live");
-  // res.sendFile(path.join(__dirname, "/public/index.html"));
   res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
 
 // ROUTES
 app.get("/api/notes", (req, res) => res.json(notes));
-// ROUTER
-// The below points our server to a series of "route" files.
-// These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 
 app.post("/api/notes", function (req, res) {
   try {
